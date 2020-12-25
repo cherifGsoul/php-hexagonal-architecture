@@ -1,0 +1,7 @@
+formatter.name: pretty
+
+suites:
+  main:
+    namespace: Taxation
+    psr4_prefix: Taxation
+    src_path: src
