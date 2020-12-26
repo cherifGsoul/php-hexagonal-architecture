@@ -8,5 +8,5 @@ interface PricedProducts
      * @param $argument1
      * @return mixed
      */
-    public function forName($argument1);
+    public function forName(string $name): Product;
 }
