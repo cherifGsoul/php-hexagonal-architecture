@@ -33,7 +33,7 @@ class TaxApplicationServiceSpec extends ObjectBehavior
 
         $taxedCategory = TaxedCategory::namedAndTaxed('Computer stuff', .29);
 
-        $product = Product::CategorizedWithCost('Computer mouse', $taxedCategory, 1000.00);
+        $product = Product::categorizedWithCost('Computer mouse', $taxedCategory, 1000.00);
 
         $pricedProducts->forName('Computer mouse')->willReturn($product);
 

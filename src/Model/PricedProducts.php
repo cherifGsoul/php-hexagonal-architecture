@@ -5,7 +5,7 @@ namespace Taxation\Model;
 interface PricedProducts
 {
     /**
-     * @param $argument1
+     * @param $name
      * @return mixed
      */
     public function forName(string $name): Product;
