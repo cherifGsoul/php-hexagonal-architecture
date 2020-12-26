@@ -39,6 +39,11 @@ class TaxApplicationServiceSpec extends ObjectBehavior
 
         $taxCalculator->calculateTaxFor($product)->willReturn(1290.00);
 
-        $this->execute($command)->shouldReturn(1290.00);
+        $this->execute($command)->shouldReturn([
+            'product' => 'Computer mouse',
+            'product_cost' => 1000.00,
+            'product_category_tax' => .29,
+            'product_taxed_cost' => 1290.00,
+        ]);
     }
 }
