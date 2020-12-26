@@ -128,3 +128,12 @@ fabric.properties
 /build/
 
 # End of https://www.toptal.com/developers/gitignore/api/composer,phpunit,phpstorm
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
