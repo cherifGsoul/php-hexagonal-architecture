@@ -30,6 +30,11 @@ class TaxApplicationService implements ApplicationService
     {
         /** @var Product $product */
         $product = $this->pricedProducts->forName($command->product);
-        return $product->taxedCost($this->taxCalculator);
+        return [
+            'product' => $product->getName(),
+            'produt_cost' => $product->getCost(),
+            'product_category_tax' => $product->getCategoryTaxRate(),
+            'product_taxed_cost' => $product->taxedCost($this->taxCalculator),
+        ];
     }
 }

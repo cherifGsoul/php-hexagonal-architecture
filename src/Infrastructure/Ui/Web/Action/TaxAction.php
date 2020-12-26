@@ -25,7 +25,7 @@ class TaxAction
     public function __invoke($product, Request $request): JsonResponse
     {
         $command = new TaxationCommand($request->get('product'));
-        $cost = $this->taxService->execute($command);
-        return new JsonResponse(['cost' => $cost]);
+        $taxedProduct = $this->taxService->execute($command);
+        return new JsonResponse($taxedProduct);
     }
 }
