@@ -15,8 +15,9 @@ class InMemoryPricedProducts implements PricedProducts
     public function __construct()
     {
         $this->products = [
-            'Mouse' => Product::categorizedWithCost('Mouse', TaxedCategory::namedAndTaxed(.29)),
-            'Monitor' => Product::categorizedWithCost('Monitor', TaxedCategory::namedAndTaxed(.29)),
+            'mouse' => Product::categorizedWithCost('mouse', TaxedCategory::namedAndTaxed(.29)),
+            'mouse' => Product::categorizedWithCost('monitor', TaxedCategory::namedAndTaxed(.29)),
+            'perfume' => Product::categorizedWithCost('perfume', TaxedCategory::namedAndTaxed('Computer stuff', .15), 18000.00),
         ];
     }
 

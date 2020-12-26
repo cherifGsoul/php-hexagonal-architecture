@@ -20,7 +20,7 @@ class TaxApplicationServiceSpec extends ObjectBehavior
         $this->beConstructedWith($pricedProducts, $taxCalculator);
     }
 
-    function it_implements_input_post()
+    function it_implements_input_port()
     {
         $this->shouldImplement(ApplicationService::class);
     }
