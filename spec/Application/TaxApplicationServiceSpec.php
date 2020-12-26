@@ -3,6 +3,7 @@
 namespace spec\Taxation\Application;
 
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
 use Taxation\Application\Command\TaxationCommand;
 use Taxation\Application\ApplicationService;
 use Taxation\Model\Cost;
@@ -33,7 +34,7 @@ class TaxApplicationServiceSpec extends ObjectBehavior
 
         $taxedCategory = TaxedCategory::namedAndTaxed('Computer stuff', .29);
 
-        $product = Product::CategorizedWithCost('Computer mouse', $taxedCategory, 1000.00);
+        $product = Product::categorizedWithCost('Computer mouse', $taxedCategory, 1000.00);
 
         $pricedProducts->forName('Computer mouse')->willReturn($product);
 
@@ -45,5 +46,7 @@ class TaxApplicationServiceSpec extends ObjectBehavior
             'product_category_tax' => .29,
             'product_taxed_cost' => 1290.00,
         ]);
+
+        $taxCalculator->calculateTaxFor(Argument::type(Product::class))->shouldHaveBeenCalled();
     }
 }
